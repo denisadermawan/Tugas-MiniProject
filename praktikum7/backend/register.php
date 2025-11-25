@@ -4,11 +4,7 @@ include 'db.php';
 
 $data = json_decode(file_get_contents("php://input"), true);
 
-function clean_input($conn, $input) {
-   return $conn->real_escape_string(trim($input));
-}
-
-$username = clean_input($conn, $data['username']);
+$username = $conn->real_escape_string($data['username']);
 $password_raw = $data['password'];
 $password_hashed = password_hash($password_raw, PASSWORD_BCRYPT);
 
