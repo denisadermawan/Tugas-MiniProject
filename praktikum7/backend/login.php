@@ -18,8 +18,10 @@ if ($result->num_rows > 0) {
         echo json_encode(["status" => "error", "message" => "Password salah"]);
     }
 } else {
-    echo json_encode(["status" => "error", "message" => "User tidak ditemukan"]);
+    echo json_encode(["status" => "error", "message" => "Username tidak ditemukan"]);
 }
+
+
 
 
 ?>
